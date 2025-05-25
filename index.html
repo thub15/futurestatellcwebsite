@@ -6,25 +6,118 @@
   <title>Future State LLC</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 2rem;
-      background-color: #f4f7fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #004578;
+      color: white;
+      padding: 2rem 1rem;
       text-align: center;
     }
-    h1 {
-      font-size: 3rem;
-      color: #2a2a2a;
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
     }
-    h2 {
-      font-size: 1.5rem;
-      color: #555;
+
+    header p {
       margin-top: 0.5rem;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      gap: 1rem;
+    }
+
+    .column {
+      flex: 1 1 calc(33.333% - 2rem);
+      background-color: white;
+      padding: 1.5rem;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .column {
+        flex: 1 1 100%;
+      }
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    input, textarea {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #004578;
+      color: white;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005f9e;
     }
   </style>
 </head>
 <body>
-  <h1>Future State LLC</h1>
-  <h2>Helping you reach your future state</h2>
+  <header>
+    <h1>Future State LLC</h1>
+    <p>Helping you create your future</p>
+  </header>
+
+  <div class="container">
+    <div class="column">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Identity and Access Management</li>
+        <li>Cloud Security Automation</li>
+        <li>Microsoft Azure Entra ID Consulting</li>
+        <li>RBAC and Access Reviews</li>
+        <li>Audit & Compliance Support</li>
+        <li>DevOps for Security Engineering</li>
+      </ul>
+    </div>
+
+    <div class="column">
+      <h2>Contact Info</h2>
+      <p>You can reach us directly at:</p>
+      <p><strong>Email:</strong> <a href="mailto:contact@futurestatellc.com">contact@futurestatellc.com</a></p>
+    </div>
+
+    <div class="column">
+      <h2>Send Us a Message</h2>
+      <form action="mailto:contact@futurestatellc.com" method="POST" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Email</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
